@@ -1,4 +1,6 @@
-# USE it 
+# French income tax and housing loan calculator 
+
+Works for any couple
 
 ```sh
 pip install -r requirements.txt
