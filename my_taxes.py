@@ -2,13 +2,18 @@ from fire import Fire
 from tax import taxes
 import math
  
-def capcredit(IA,M,N):
-    """capcredit(IA,M,N): capital emprunté à IA%/an d'intérêt, remboursé en N mois avec une mensualité de M"""
-    # si l'intérêt est nul, le capital est facile à calculer!
+def cap_loan(IA,M,N):
+    """
+        Computes the maximum loan one can get
+
+        Args: 
+            IA: Yearly interest rate
+            M: Maximum monthly payement
+            N: Total number of months
+    """
     if IA==0:
-        C=M*N
-        return C
-    # calcul du capital emprunté
+        return M*N
+
     I=IA/1200
     M=M
     C=M/(I*(1-(1/(1-(1+I)**N))))
@@ -52,7 +57,7 @@ def my_taxes(income_1: int, income_2: int, nb_children:int):
 
         print(f"{key} : \n\tNetto revenues before income tax: {total_net_revenues}/yr {math.floor(total_net_revenues/12)}/month,"
               f"\n\tMaximum housing loan montly payment: {max_debt_month} / month"
-              f"\n\tMaximum housing loan at 4% interest rate over 25 years : {math.ceil(capcredit(4,max_debt_month,300))} euros."
+              f"\n\tMaximum housing loan at 4% interest rate over 25 years : {math.ceil(cap_loan(4,max_debt_month,300))} euros."
               f"\n\tTaxes : {taxes_to_pay} / year"
               f"\n\tNetto revenues after income tax : {netto_after_tax_month} / month"
               f"\n\tNetto revenues after income tax, minus housing :"
