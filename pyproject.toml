@@ -1,0 +1,8 @@
+[project]
+name = "french-salary-taxes"
+version = "0.1.0"
+description = "French income tax and housing loan calculator for couples"
+requires-python = ">=3.13"
+dependencies = [
+    "fire",
+]

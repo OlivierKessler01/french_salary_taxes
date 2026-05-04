@@ -8,5 +8,6 @@ conf.json
 dist/
 \#*
 venv*
+.venv/
 .pypirc
 *.swp
